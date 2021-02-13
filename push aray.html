@@ -1,0 +1,116 @@
+<html>
+    <head>
+       <style>
+         
+
+           
+
+
+
+           
+
+
+           .mydiv{
+
+               background-color:lightpink;
+               color: lightcyan;
+               font-weight: bold;
+
+               
+           }
+
+         .a{
+
+              background-color:lightblue;
+              color:lemonchiffon;
+              text-align: center;
+              font-weight: bold;
+              font:italic
+         }
+
+         
+
+
+
+       </style>
+    </head>
+
+     <body>
+
+        <caption><h1 style="background-color: lightcyan; color: lightpink; text-align: center;">PUSH PRODUCT TO AN ARRAY</h1></caption>
+
+         <form>
+            <div class="mydiv">
+            Product id:<input type="text" id="productid" class="a"><br><br>
+            Product name: <input type="text" id="productname" class="a"><br><br>
+            product Description: <input type="text" id="productdescription" class="a"><br><br>
+            Product price : <input type="text" id="productprice" class="a"><br><br>
+            Product seller: <input type="text" id="productseller" class="a"><br><br>
+            </div><br><br>
+           <button onclick="addproduct()" style="background-color:mediumturquoise; color: linen;">Add product</button>
+
+         </form>
+
+          <ul id="productlist">
+
+          </ul>
+
+         <script>
+
+
+ 
+          
+var products=[
+                   { 
+                        productid: 12345,
+                        productname:"chairs",
+                        productdescription:"comfortable with high quality",
+                        productprice:6500,
+                        productseller:"neelkamal",
+                   },
+                   
+
+            ]
+
+        function addproduct(){
+
+            event.preventDefault();
+
+                var productid_value=  document.getElementById("productid").value;
+                var productname_value=  document.getElementById("productname").value;
+                var productdescription_value=  document.getElementById("productdescription").value;
+                var productprice_value=  document.getElementById("productprice").value;
+                var productseller_value=  document.getElementById("productseller").value;
+
+                var product= {
+                 productid:productid_value,
+                 productname:productname_value,
+                 productdescription:productdescription_value,
+                 productprice:productprice_value,
+                 productseller:productseller_value
+             }
+
+
+             products.push(product);
+
+                  var productlist=document.getElementById('productlist');
+
+                        productlist.innerHTML="";
+
+                          var index=0;
+
+                          while(index < products.length){
+
+                          productlist.innerHTML= productlist.innerHTML+"<li>" + products[index].productid + "&nbsp;" + products[index].productname + "&nbsp;" + products[index].productdescription + "&nbsp;" + products[index].productprice + "&nbsp;" + products[index].productseller +"</li>";
+                            index++;
+
+ } 
+      }
+
+ 
+
+
+          </script>
+
+     </body>
+</html>

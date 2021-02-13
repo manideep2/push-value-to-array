@@ -1,0 +1,50 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+
+       
+    
+
+        <ul id="productlist">
+
+        </ul>
+
+        <script>
+
+
+            var products=[
+                   { 
+                        productid: 12345,
+                        productname:"chairs",
+                        productdescription:"comfortable with high quality",
+                        productprice:6500,
+                        productseller:"neelkamal",
+                   }
+               
+
+            ]
+
+
+
+             
+                   var productlist=document.getElementById('productlist');
+
+                        products.innerHTML="";
+
+                         var index=0;
+
+                   while(index < products.length){
+
+                    productlist.innerHTML= productlist.innerHTML+"<li>" + products[index].productid +"&nbsp;" + products[index].productname + "&nbsp;" + products[index].productdescription + "&nbsp;" + products[index].productprice + "&nbsp;" + products[index].productseller +"</li>";
+                            i++;
+
+                    } 
+                         
+  
+        </script>
+       
+     </body>
+    </html>
